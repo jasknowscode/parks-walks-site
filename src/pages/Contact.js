@@ -75,7 +75,8 @@ function Contact() {
       // Load Google Places if not already there
       await loadScript(
         "google-places-sdk",
-        "https://maps.googleapis.com/maps/api/js?key=AIzaSyA0Z_MG1r4Yz2EooX13nnWLpC1JHk-jFQw&libraries=places"
+        "https://maps.googleapis.com/maps/api/js?key= 
+      // Regenerate Google APi Key Above
       );
 
       // Load Scout app.js fresh (so it finds the new placeholder)
