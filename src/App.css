@@ -123,6 +123,9 @@ h2::after {
   );
   background-size: cover;
   background-position: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -337,10 +340,10 @@ section + section {
 ========= */
 
 .carousel {
-  margin: 0;
-  padding: 0px;
+  margin: 32px;
+  padding: 16px;
   position: relative;
-  
+  max-width: 1100px;
 }
 
 .carousel-frame {
