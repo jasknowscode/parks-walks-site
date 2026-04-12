@@ -38,9 +38,10 @@ export default function Home() {
   return (
     <>
       <header className="hero">
+        <Carousel />
         <h1>RELIABLE, INSURED PET CARE YOU CAN RELY ON.</h1>
         
-        <Carousel />
+        
 
         <Link className="btn-primary" to="/contact">
           Book Now

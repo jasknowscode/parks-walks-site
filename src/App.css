@@ -337,10 +337,8 @@ section + section {
 ========= */
 
 .carousel {
-  margin: 1.25rem auto;
+  margin: 0;
   padding: 0px;
-  max-width: 900px;
-  height: 400px;
   position: relative;
   
 }
