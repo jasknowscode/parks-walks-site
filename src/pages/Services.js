@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import Carousel from "../components/Carousel";
+
 
 export default function Services() {
   const services = useMemo(
@@ -89,7 +89,7 @@ export default function Services() {
     <div>
       <header className="page-header">
         <h1>Services</h1>
-        <Carousel />
+        
         <p>Flexible care options designed around your pet&apos;s needs.</p>
       </header>
 

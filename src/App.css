@@ -42,22 +42,22 @@ a:hover {
 nav {
   background-color: var(--off-white);
   border-bottom: 1px solid rgba(111, 117, 115, 0.35);
-  padding: 1.2rem 0;
+  padding: 0;
+  margin: 8px;
   width: 100%;
 }
 
 .nav-inner {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .logo {
-  font-family: "Chewy", cursive;
-  font-size: 1.6rem;
+  height: 48px;
   color: var(--sage);
   text-decoration: none;
 }
@@ -90,6 +90,11 @@ nav a:hover {
   color: var(--sage);
 }
 
+.nav-name {
+  font-family: "Chewy", cursive;
+  color: var(--sage);
+}
+
 /* =========
    Typography helpers
 ========= */
@@ -110,7 +115,7 @@ h2::after {
 ========= */
 
 .hero {
-  padding: 5rem 2rem;
+  padding: 52px;
   text-align: center;
   background-image: linear-gradient(
     rgba(250, 250, 248, 0.92),
@@ -120,18 +125,21 @@ h2::after {
   background-position: center;
 }
 
+
 .hero h1 {
-  font-family: "Chewy", cursive;
+  padding: 32px;
   font-weight: 700;
   letter-spacing: 1px;
   font-size: 2.8rem;
   margin: 0 0 0.5rem;
   color: var(--sage);
+  font-family: "Chewy", cursive;
 }
 
 .hero p {
   color: var(--soft-gray);
-  margin: 0.25rem 0 1.25rem;
+  margin: 0.25rem 0.25rem;
+  padding: 52px;
 }
 
 .hero-content {
@@ -144,10 +152,11 @@ h2::after {
 ========= */
 
 .page-header {
-  background: linear-gradient(180deg, var(--sand), var(--off-white));
+  background: var(--off-white);
   padding: 3.5rem 2rem;
   text-align: center;
   color: var(--sage);
+  font-family: "Chewy", cursive;
 }
 
 .page-header h1 {
@@ -200,24 +209,24 @@ section + section {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 32px;
   margin-top: 18px;
 }
 
 .service-card {
   display: grid;
   grid-template-columns: 1fr 160px;
-  gap: 16px;
+  gap: 32px;
   align-items: center;
-
   background: #fff;
   border: var(--border);
   border-radius: var(--radius);
   overflow: hidden;
   padding: 16px;
-
   transition: transform 160ms ease, box-shadow 160ms ease;
+  display: flex;
+  align-items: center;
 }
 
 .service-card:hover {
@@ -231,11 +240,14 @@ section + section {
   object-fit: cover;
   border-radius: 12px;
   display: block;
-  justify-self: end;
+ 
 }
 
 .service-content {
-  padding: 0;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
 }
 
 .service-card h3 {
@@ -269,13 +281,14 @@ section + section {
 
 .btn-primary,
 .btn-secondary {
-  display: inline-block;
+  
   border-radius: 999px;
   text-decoration: none;
   font-weight: 600;
   padding: 0.8rem 1.5rem;
   border: none;
   cursor: pointer;
+  
 }
 
 .btn-primary {
@@ -324,9 +337,12 @@ section + section {
 ========= */
 
 .carousel {
-  margin: 1.25rem auto 0;
+  margin: 1.25rem auto;
+  padding: 0px;
   max-width: 900px;
+  height: 400px;
   position: relative;
+  
 }
 
 .carousel-frame {
@@ -338,7 +354,7 @@ section + section {
 
 .carousel-image {
   width: 100%;
-  height: 320px;
+  height: 420px;
   object-fit: cover;
   display: block;
   border-radius: 18px;
@@ -365,6 +381,7 @@ section + section {
 }
 
 .carousel-btn.prev {
+  display: none;
   left: 12px;
 }
 
@@ -373,10 +390,11 @@ section + section {
 }
 
 .carousel-dots {
-  display: flex;
+  display: none;
   justify-content: center;
   gap: 10px;
   margin-top: 12px;
+  
 }
 
 .dot {
@@ -451,12 +469,13 @@ section + section {
 }
 
 .service-image {
+  padding: 16px;
   width: 160px;
   height: 160px;
   object-fit: cover;
   border-radius: 12px;
   display: block;
-  justify-self: end;
+  justify-self: start;
 }
 
 .contact-form {

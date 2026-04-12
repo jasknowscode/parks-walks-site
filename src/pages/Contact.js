@@ -72,14 +72,13 @@ function Contact() {
       placeholder.className = "embedded-form-widget";
       containerRef.current.appendChild(placeholder);
 
-      // Load Google Places if not already there
+      // Load Google Places if not already there //
       await loadScript(
         "google-places-sdk",
-        "https://maps.googleapis.com/maps/api/js?key= 
-      // Regenerate Google APi Key Above
+        "https://maps.googleapis.com/maps/api/js?key=AIzaSyA0Z_MG1r4Yz2EooX13nnWLpC1JHk-jFQw&libraries=places"
       );
 
-      // Load Scout app.js fresh (so it finds the new placeholder)
+      // Load Scout app.js fresh (so it finds the new placeholder //
       await loadScript(
         scoutScriptId,
         "https://dyoqr306barbt.cloudfront.net/leads-form/js/app.js"
@@ -93,7 +92,7 @@ function Contact() {
     <div>
       <header className="page-header">
         <h1>Contact</h1>
-        <p>Tell me about your pet and the care you&apos;re looking for.</p>
+        <p>Tell us about your pet and the care you&apos;re looking for.</p>
 
         {selectedService ? (
           <p className="contact-selected">

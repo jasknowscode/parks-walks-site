@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Carousel from "../components/Carousel";
 
 const services = [
   {
@@ -22,7 +23,7 @@ const services = [
   {
     title: "Hotel Concierge Pet Care",
     desc: "Trusted pet care services for travelers staying in pet-friendly hotels.",
-    img: `${process.env.PUBLIC_URL}/assets/service-hotil.png`,
+    img: `${process.env.PUBLIC_URL}/assets/service-hotel.png`,
     alt: "Dog on leash outside a hotel",
   },
   {
@@ -37,37 +38,34 @@ export default function Home() {
   return (
     <>
       <header className="hero">
-        <h1>Reliable, insured pet care in Chicago</h1>
-        <p>Dog walking, pet sitting, and personalized in-home care.</p>
+        <h1>RELIABLE, INSURED PET CARE YOU CAN RELY ON.</h1>
+        
+        <Carousel />
 
         <Link className="btn-primary" to="/contact">
           Book Now
         </Link>
       </header>
-    
+
       <section id="service-grid" aria-labelledby="services-heading">
         <h2 id="services-heading">Services</h2>
 
         <div className="services-grid">
           {services.map((service) => (
             <article className="service-card" key={service.title}>
+               <img className="service-image" src={service.img} alt={service.alt} />
                 <div className="service-content">
                 <h3>{service.title}</h3>
+                
                 <p>{service.desc}</p>
                     <div className="service-actions">
                     <Link className="btn-secondary" to="/services">
                     Learn More
                     </Link>
 
-                    <Link
-                        className="btn-primary btn-primary--sm" 
-                        to={`/contact?services=${encodeURIComponent(service.title)}`}
-                        >
-                        Book This
-                    </Link>
                     </div>
                 </div>
-              <img className="service-image" src={service.img} alt={service.alt} />
+              
             </article>
           ))}
         </div>
@@ -78,15 +76,15 @@ export default function Home() {
 
         <div className="steps">
             <div className="step">
-                <h3>1) Request</h3>
+                <h3>1 Request</h3>
                 <p> Tell us what you need and your neighborhood.</p>
             </div>
             <div className="step">
-                <h3>2) Schedule a Meet &amp; Greet</h3>
+                <h3>2 Schedule a Meet &amp; Greet</h3>
                 <p>We'll meet you and your pet, confirm routines, and answer any lingering questions, free of charge.</p>
             </div>
             <div className="step">
-                <h3>3) Confirm + Care</h3>
+                <h3>3 Confirm + Care</h3>
                 <p>You will be onboarded to our platform "Scout" to receive booking confirmation, notes, photo updates and invoices. 
                    Payment and a signed 'Agreement of Services' is required to confirm booking.
                 </p>

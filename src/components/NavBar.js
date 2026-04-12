@@ -4,6 +4,7 @@ function NavBar() {
   return (
     <nav>
       <div className="nav-inner">
+        <h1 className="nav-name">PARKS WALKS</h1>
         <div className="logo">
           <Link to="/">
             <img src="/assets/logo.png" alt="Parks Walks logo" />
