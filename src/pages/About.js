@@ -9,7 +9,7 @@ export default function About() {
       <section className="section-card about-layout">
         <img
           className="about-photo"
-          src={`${process.env.PUBLIC_URL}/assets/about-1.png`}
+          src={`${process.env.PUBLIC_URL}/assets/hero.png`}
           alt="Jasmine with a dog"
         />
 

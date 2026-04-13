@@ -42,80 +42,74 @@ a:hover {
 nav {
   background-color: var(--off-white);
   border-bottom: 1px solid rgba(111, 117, 115, 0.35);
-  padding: 0;
-  margin: 8px;
-  width: 100%;
+  top: 0;
+  position: sticky;
+  z-index: 1000;
 }
 
 .nav-inner {
-  max-width: 1100px;
+  max-width: 1500px;
+  width: 100%;
   margin: 0 auto;
-  padding: 0;
-  display: flex;
-  justify-content: space-between;
+  padding: 16px 24px;
+  display: grid;
   align-items: center;
-}
-
-.logo {
-  height: 48px;
-  color: var(--sage);
-  text-decoration: none;
-}
-
-.logo img {
-  height: 48px;
-  width: auto;
-  display: block;
+  justify-content: space-between;
+  grid-template-columns: 1fr auto 1fr;
 }
 
 nav ul {
+  justify-self: end;
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   gap: 1.5rem;
+  align-items: center;
+}
+
+.logo {
+  justify-self: start;
+}
+
+.logo img {
+  height: 52px;
+  width: auto;
+  display: block;
 }
 
 nav li {
   font-weight: 500;
+  gap: 8px;
 }
 
 nav a {
   text-decoration: none;
-  color: var(--soft-gray);
+  color: var(--sage);
   font-weight: 500;
 }
 
 nav a:hover {
-  color: var(--sage);
+  color: var(--soft-gray);
 }
 
 .nav-name {
-  font-family: "Chewy", cursive;
-  color: var(--sage);
-}
-
-/* =========
-   Typography helpers
-========= */
-
-h1::after,
-h2::after {
-  content: "";
+  font-family: "Chewy";
+  color: var(--soft-blue);
+  margin: 0;
   display: block;
-  width: 60px;
-  height: 4px;
-  background-color: var(--sage);
-  margin: 0.8rem auto 0;
-  border-radius: 4px;
+  line-height: 1;
+  font-size: 64px;
 }
+
 
 /* =========
    Hero (Home)
 ========= */
 
 .hero {
-  padding: 52px;
+  padding: 140px 52px 52px;
+  padding-top: 140px;
   text-align: center;
   background-image: linear-gradient(
     rgba(250, 250, 248, 0.92),
@@ -123,9 +117,6 @@ h2::after {
   );
   background-size: cover;
   background-position: center;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
 }
 
 
@@ -136,8 +127,15 @@ h2::after {
   font-size: 2.8rem;
   margin: 0 0 0.5rem;
   color: var(--sage);
-  font-family: "Chewy", cursive;
+  font-family: "Fraunces", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "SOFT" 0,
+    "WONK" 0;
 }
+
 
 .hero p {
   color: var(--soft-gray);
@@ -305,8 +303,8 @@ section + section {
 
 .btn-secondary {
   background: transparent;
-  color: var(--sage);
-  border: 1px solid rgba(143, 175, 159, 0.55);
+  color: var(--soft-blue);
+  border: 1.5px solid rgba(143, 175, 159, 0.55);
 }
 
 .btn-secondary:hover {
@@ -340,10 +338,11 @@ section + section {
 ========= */
 
 .carousel {
-  margin: 32px;
+  margin: 0 auto;
   padding: 16px;
   position: relative;
   max-width: 1100px;
+  display: block;
 }
 
 .carousel-frame {
@@ -395,13 +394,12 @@ section + section {
   justify-content: center;
   gap: 10px;
   margin-top: 12px;
-  
 }
 
 .dot {
   width: 10px;
   height: 10px;
-  border-radius: 999px;
+  border-radius: 999px; 
   border: none;
   background: rgba(111, 117, 115, 0.35);
   cursor: pointer;

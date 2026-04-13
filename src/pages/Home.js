@@ -37,6 +37,7 @@ const services = [
 export default function Home() {
   return (
     <>
+    <div className="landing-hero">
       <header className="hero">
         <Carousel />
         <h1>RELIABLE, INSURED PET CARE YOU CAN RELY ON.</h1>
@@ -47,7 +48,7 @@ export default function Home() {
           Book Now
         </Link>
       </header>
-
+    </div>
       <section id="service-grid" aria-labelledby="services-heading">
         <h2 id="services-heading">Services</h2>
 
