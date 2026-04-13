@@ -206,7 +206,7 @@ section + section {
 
 #services-heading {
   font-family: Chewy;
-  color: var(--soft-blue);
+  color: var(--sage);
   font-size: 52px;
   display: block;
   margin: 0 auto;
@@ -219,7 +219,7 @@ section + section {
 }
 
 .services-grid {
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(5, minmax(180px, 1fr));
   gap: 28px;
   margin: 24px auto;
@@ -230,10 +230,14 @@ section + section {
   border-radius: 36px;
 }
 
+#services-grid-heading {
+  font-family: Chewy;
+  color: var(--soft-blue);
+}
+
 .service-card {
   display: flex;
   flex-direction: column-reverse;
-  align-items: center;
   justify-content: space-between;
   width: fit-content;
   min-height: 320px;
@@ -242,11 +246,16 @@ section + section {
   border-radius: var(--radius);
   text-align: center;
   transition: transform 160ms ease, box-shadow 160ms ease;
+  padding: 4px;
 }
 
 .service-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.service-actions {
+  
 }
 
 .service-image {

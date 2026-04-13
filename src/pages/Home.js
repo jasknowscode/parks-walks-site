@@ -62,9 +62,6 @@ export default function Home() {
                   <img className="service-image" src={service.img} alt={service.alt} />   
 
                   <div className="service-actions">
-                    <Link className="btn-secondary" to="/services">
-                    Learn More
-                  </Link>
 
                     </div>
                 </div>

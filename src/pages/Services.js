@@ -94,7 +94,7 @@ export default function Services() {
       </header>
 
       <section className="section-card" aria-labelledby="services-grid-heading">
-        <h2 id="services-grid-heading">Choose a service</h2>
+        <h2 id="services-grid-heading">CHOOSE A SERVICE</h2>
 
         <div className="services-grid">
           {services.map((s) => {
