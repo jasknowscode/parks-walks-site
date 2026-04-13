@@ -6,31 +6,31 @@ const services = [
     title: "Dog Walking",
     desc: "Structured walks tailored to your dog's energy level, routine and schedule.",
     img: `${process.env.PUBLIC_URL}/assets/service-walk.png`,
-    alt: "Dog walking in the neighborhood",
+    alt: "Dogs walking on leashes held by a person.",
   },
   {
-    title: "Cat, Critter, Elder and Puppy Care",
+    title: "Drop-In",
     desc: "Gentle, attentive care for small pets, cats, puppies and elderly dogs with limited mobility.",
     img: `${process.env.PUBLIC_URL}/assets/service-dropin.png`,
-    alt: "Cat receiving gentle care at home",
+    alt: "A cat looking up, sitting comfortably.",
   },
   {
-    title: "In-Home Pet Sitting",
+    title: "In-Home Overnight",
     desc: "Comfortable, stress-free care in your home.",
     img: `${process.env.PUBLIC_URL}/assets/service-sit.png`,
-    alt: "Pet sitting in a cozy living room",
+    alt: "A lying dog looking into the camera.",
   },
   {
-    title: "Hotel Concierge Pet Care",
+    title: "Hotel Concierge",
     desc: "Trusted pet care services for travelers staying in pet-friendly hotels.",
     img: `${process.env.PUBLIC_URL}/assets/service-hotel.png`,
-    alt: "Dog on leash outside a hotel",
+    alt: "Dog on leash outside a hotel.",
   },
   {
     title: "Wedding Pet Handling",
     desc: "Professional pet handling so your furry family members can be part of your special day.",
     img: `${process.env.PUBLIC_URL}/assets/service-wedding.png`,
-    alt: "Dog dressed for a wedding photo",
+    alt: "Dog dressed for a wedding photo.",
   },
 ];
 
@@ -55,15 +55,16 @@ export default function Home() {
         <div className="services-grid">
           {services.map((service) => (
             <article className="service-card" key={service.title}>
-               <img className="service-image" src={service.img} alt={service.alt} />
+
                 <div className="service-content">
-                <h3>{service.title}</h3>
-                
-                <p>{service.desc}</p>
-                    <div className="service-actions">
+                  
+                  <h3>{service.title}</h3>            
+                  <img className="service-image" src={service.img} alt={service.alt} />   
+
+                  <div className="service-actions">
                     <Link className="btn-secondary" to="/services">
                     Learn More
-                    </Link>
+                  </Link>
 
                     </div>
                 </div>

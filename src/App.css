@@ -204,30 +204,44 @@ section + section {
    Service grid (Home + Services)
 ========= */
 
+#services-heading {
+  font-family: Chewy;
+  color: var(--soft-blue);
+  font-size: 52px;
+  display: block;
+  margin: 0 auto;
+  max-width: 1100px;
+  text-align: center;
+}
+
 #service-grid {
   padding-top: 2rem;
 }
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: 32px;
-  margin-top: 18px;
+  grid-template-columns: repeat(5, minmax(180px, 1fr));
+  gap: 28px;
+  margin: 24px auto;
+  padding: 16px;
+  align-items: start;
+  background: #fff;
+  border: var(--border);
+  border-radius: 36px;
 }
 
 .service-card {
-  display: grid;
-  grid-template-columns: 1fr 160px;
-  gap: 32px;
-  align-items: center;
-  background: #fff;
-  border: var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  padding: 16px;
-  transition: transform 160ms ease, box-shadow 160ms ease;
   display: flex;
+  flex-direction: column-reverse;
   align-items: center;
+  justify-content: space-between;
+  width: fit-content;
+  min-height: 320px;
+  gap: 18px;
+  align-items: center;
+  border-radius: var(--radius);
+  text-align: center;
+  transition: transform 160ms ease, box-shadow 160ms ease;
 }
 
 .service-card:hover {
@@ -239,20 +253,19 @@ section + section {
   width: 160px;
   height: 160px;
   object-fit: cover;
-  border-radius: 12px;
   display: block;
- 
 }
 
 .service-content {
-  padding: 8px;
+  padding: 0px;
   display: flex;
   flex-direction: column;
-  align-items: space-between;
+  align-items: center;
+  gap: 14px;
 }
 
 .service-card h3 {
-  margin: 0 0 0.35rem;
+  margin: 0;
   color: var(--sage);
 }
 
