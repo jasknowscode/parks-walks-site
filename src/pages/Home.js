@@ -33,7 +33,7 @@ const services = [
   },
   {
     slug: "in-home-care",
-    title: "Pet Sitting & In-Home Care",
+    title: "Overnight Petsitting",
     short: "Overnight or extended care in your pet’s home for comfort and routine.",
     price: "Starting at $175/night",
     img: `${process.env.PUBLIC_URL}/assets/service-sit.png`,
@@ -95,7 +95,7 @@ export default function Home() {
         </header>
       </div>
 
-<section id="service-grid" className="section-card" aria-labelledby="services-heading">
+<section id="service-grid" aria-labelledby="services-heading">
   <h2 id="services-heading">Services</h2>
 
   <div className="services-grid">
@@ -111,6 +111,7 @@ export default function Home() {
             <p>{s.short}</p>
             <p className="price">{s.price}</p>
 
+          <div id="button-container">
             <div className="service-actions">
               <button
                 type="button"
@@ -129,6 +130,7 @@ export default function Home() {
                 Book This
               </Link>
             </div>
+          </div>
 
             <div
               id={`${s.slug}-details`}
