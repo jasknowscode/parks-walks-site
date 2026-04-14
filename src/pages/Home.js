@@ -1,75 +1,152 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Carousel from "../components/Carousel";
 
 const services = [
   {
+    slug: "dog-walking",
     title: "Dog Walking",
-    desc: "Structured walks tailored to your dog's energy level, routine and schedule.",
+    short: "Structured walks tailored to your dog’s pace, age, and energy level.",
+    price: "Starting at $25",
     img: `${process.env.PUBLIC_URL}/assets/service-walk.png`,
-    alt: "Dogs walking on leashes held by a person.",
+    alt: "Dog walking in the neighborhood",
+    details: [
+      "20 / 30 / 60 minute walk options",
+      "Fresh water + quick home check included",
+      "GPS + photo updates after each walk",
+      "Ideal for busy workdays or high-energy pups",
+    ],
   },
   {
-    title: "Drop-In",
-    desc: "Gentle, attentive care for small pets, cats, puppies and elderly dogs with limited mobility.",
+    slug: "drop-ins",
+    title: "Drop-In Visits",
+    short: "Drop-ins for puppies, seniors, meds, and small pets.",
+    price: "Starting at $25",
     img: `${process.env.PUBLIC_URL}/assets/service-dropin.png`,
-    alt: "A cat looking up, sitting comfortably.",
+    alt: "Gentle drop-in visit with a pet at home",
+    details: [
+      "Perfect for puppies, seniors, cats, and critters",
+      "Medication support if needed",
+      "Litter / potty cleanup and fresh water",
+      "Quick playtime + enrichment",
+    ],
   },
   {
-    title: "In-Home Overnight",
-    desc: "Comfortable, stress-free care in your home.",
+    slug: "in-home-care",
+    title: "Pet Sitting & In-Home Care",
+    short: "Overnight or extended care in your pet’s home for comfort and routine.",
+    price: "Starting at $175/night",
     img: `${process.env.PUBLIC_URL}/assets/service-sit.png`,
-    alt: "A lying dog looking into the camera.",
+    alt: "Pet resting at home during a sit",
+    details: [
+      "Overnight presence to maintain routine",
+      "Feedings, potty breaks, play, and medication support",
+      "Home care: bring in packages, lights, basic tidying",
+      "Photo + written updates included",
+    ],
   },
   {
+    slug: "hotel",
     title: "Hotel Concierge",
-    desc: "Trusted pet care services for travelers staying in pet-friendly hotels.",
+    short: "Care during your pet-friendly hotel stay so your pet gets attention and routine.",
+    price: "Starting at $65/hour (2-hour minimum)",
     img: `${process.env.PUBLIC_URL}/assets/service-hotel.png`,
-    alt: "Dog on leash outside a hotel.",
+    alt: "Dog on leash outside a hotel",
+    details: [
+      "Great for events, dinners, and travel days",
+      "Walks + in-room companionship",
+      "Flexible timing based on your schedule",
+      "Photo updates while you’re out",
+    ],
   },
   {
-    title: "Wedding Pet Handling",
-    desc: "Professional pet handling so your furry family members can be part of your special day.",
+    slug: "wedding",
+    title: "Wedding Handler",
+    short: "Support so your pet can be part of your special day—photos, ceremony, transitions.",
+    price: "$375",
     img: `${process.env.PUBLIC_URL}/assets/service-wedding.png`,
-    alt: "Dog dressed for a wedding photo.",
+    alt: "Dog prepared for a wedding photo",
+    details: [
+      "Pre-ceremony walk and calming support",
+      "Handling for photos + aisle moments",
+      "Transport coordination (as needed)",
+      "Comfort breaks, water, cleanup supplies",
+    ],
   },
 ];
 
 export default function Home() {
+  const [openSlug, setOpenSlug] = useState(null);
+
+  function toggle(slug) {
+    setOpenSlug((cur) => (cur === slug ? null : slug));
+  }
+
   return (
     <>
-    <div className="landing-hero">
-      <header className="hero">
-        <Carousel />
-        <h1>RELIABLE, INSURED PET CARE YOU CAN RELY ON.</h1>
-        
-        
+      <div className="landing-hero" id="home">
+        <header className="hero">
+          <Carousel />
+          <h1>RELIABLE, INSURED PET CARE YOU CAN RELY ON.</h1>
 
-        <Link className="btn-primary" to="/contact">
-          Book Now
-        </Link>
-      </header>
-    </div>
-      <section id="service-grid" aria-labelledby="services-heading">
-        <h2 id="services-heading">Services</h2>
+          <Link className="btn-primary" to="/contact">
+            Book Now
+          </Link>
+        </header>
+      </div>
 
-        <div className="services-grid">
-          {services.map((service) => (
-            <article className="service-card" key={service.title}>
+<section id="service-grid" className="section-card" aria-labelledby="services-heading">
+  <h2 id="services-heading">Services</h2>
 
-                <div className="service-content">
-                  
-                  <h3>{service.title}</h3>            
-                  <img className="service-image" src={service.img} alt={service.alt} />   
+  <div className="services-grid">
+    {services.map((s) => {
+      const isOpen = openSlug === s.slug;
 
-                  <div className="service-actions">
+      return (
+        <article className={`service-card service-card--stack`} key={s.slug}>
+          <img className="service-image service-image--wide" src={s.img} alt={s.alt} />
 
-                    </div>
-                </div>
-              
-            </article>
-          ))}
-        </div>
-      </section>
+          <div className="service-content">
+            <h3>{s.title}</h3>
+            <p>{s.short}</p>
+            <p className="price">{s.price}</p>
+
+            <div className="service-actions">
+              <button
+                type="button"
+                className="btn-secondary"
+                aria-expanded={isOpen}
+                aria-controls={`${s.slug}-details`}
+                onClick={() => toggle(s.slug)}
+              >
+                {isOpen ? "Hide details" : "View details"}
+              </button>
+
+              <Link
+                className="btn-primary btn-primary--sm"
+                to={`/contact?service=${encodeURIComponent(s.title)}`}
+              >
+                Book This
+              </Link>
+            </div>
+
+            <div
+              id={`${s.slug}-details`}
+              className={`service-details ${isOpen ? "is-open" : ""}`}
+            >
+              <ul>
+                {s.details.map((line) => (
+                  <li key={line}>{line}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </article>
+      );
+    })}
+  </div>
+</section>
+
 
       <section className="section-card">
         <h2>How it works</h2>

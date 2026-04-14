@@ -21,7 +21,7 @@ function NavBar() {
           </li>
 
           <li>
-            <NavLink to="/services">Services</NavLink>
+            <a href="/#service-grid">Services</a>
           </li>
 
           <li>

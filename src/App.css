@@ -15,6 +15,10 @@
    Global
 ========= */
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -129,7 +133,7 @@ nav a:hover {
   color: var(--sage);
   font-family: "Fraunces", serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: 300;
   font-style: normal;
   font-variation-settings:
     "SOFT" 0,
@@ -216,6 +220,7 @@ section + section {
 
 #service-grid {
   padding-top: 2rem;
+  scroll-margin-top: 120px;
 }
 
 .services-grid {
