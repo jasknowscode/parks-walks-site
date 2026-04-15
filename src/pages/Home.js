@@ -87,7 +87,7 @@ export default function Home() {
       <div className="landing-hero" id="home">
         <header className="hero">
           <Carousel />
-          <h1>RELIABLE, INSURED PET CARE YOU CAN RELY ON.</h1>
+          <h1>Reliable, insured pet care you can rely on.</h1>
 
           <Link className="btn-primary" to="/contact">
             Book Now
@@ -151,19 +151,19 @@ export default function Home() {
 
 
       <section className="section-card">
-        <h2>How it works</h2>
+        <h2>How it works!</h2>
 
         <div className="steps">
             <div className="step">
-                <h3>1 Request</h3>
-                <p> Tell us what you need and your neighborhood.</p>
+                <h3>Step 1: Request Us By Completing the Contact Form</h3>
+                <p> Tell us about your pet's needs and your specify your neighborhood.</p>
             </div>
             <div className="step">
-                <h3>2 Schedule a Meet &amp; Greet</h3>
-                <p>We'll meet you and your pet, confirm routines, and answer any lingering questions, free of charge.</p>
+                <h3>Step 2: Schedule a Meet &amp; Greet</h3>
+                <p>Meet & greet is on us! We'll meet you and your pet, confirm dates, and discuss details about the visit.</p>
             </div>
             <div className="step">
-                <h3>3 Confirm + Care</h3>
+                <h3>Step 3: Onboard &amp; Confirm</h3>
                 <p>You will be onboarded to our platform "Scout" to receive booking confirmation, notes, photo updates and invoices. 
                    Payment and a signed 'Agreement of Services' is required to confirm booking.
                 </p>
@@ -179,11 +179,16 @@ export default function Home() {
 
       <section className="section-card">
         <h2>Service Areas</h2>
-        <p>
-            Serving Chicago neighborhoods including: West Town, Tri-Taylor, South Loop, Bronzeville, Hyde Park, Southshore, Grand Boulevard, Kenwood
-            Logan Square, Avondale, Bucktown, Humboldt Park and Ukranian Village. 
-        </p>
-        <p>Not sure? Send a message and we'll confirm.</p>
+          <div className="service-area-card">
+            <h2>
+              West Town, Tri-Taylor, South Loop, Bronzeville, Hyde Park, Southshore, Grand Boulevard, Kenwood,
+              Logan Square, Avondale, Bucktown, Humboldt Park and Ukranian Village. 
+            </h2>
+          </div>
+      </section>
+
+      <section className="section-card">
+        <h2> Reviews </h2>
       </section>
     </>
  );

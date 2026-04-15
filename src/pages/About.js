@@ -14,14 +14,27 @@ export default function About() {
         />
 
         <div className="about-copy">
-          <h2>Hi, I&apos;m Jasmine!</h2>
+          <h2>Hi, I'm Jasmine!</h2>
           <p>
-            I created Parks Walks in 2025 when I was tired of the hustle of dead-end service jobs.
-            I wanted to build something I genuinely love and can be proud of.
+            Originally form St. Louis, Missouri, I moved to Chicago to attend college. In pursuit of music, I came across dog-walking. At the time I was apart of a three-person team
+            that services Wicker Park and surrounding neighborhoods. I enjoyed the work. Physically demanding yet never changing and challenging. 
           </p>
+
+          <p> 
+            In 2019, I began sitting on Rover and
+            from there, I found myself scheduling meet & greets back to back and running a legit business. I created Parks Walks in 2025 and took this leap after walking dogs and 
+            pet sitting for 10 years both doing independent contractor work.
+            I wanted to build a rewarding and fulfilling career in pet care, doing what comes most natural to me: taking care of our furry friends!
+          </p>
+
           <p>
-            Every animal has their own routine, personality, and needs — and my goal is to provide
-            dependable, compassionate care that gives pet parents peace of mind.
+            I have a 6 year old cat, Kopa! And he is absolutely a motivating factor in the way that I care. 
+            With your individual needs and pet's needs in mind, my goal is to provide
+            reliable, dependable, compassionate care that gives pet parents peace of mind.
+          </p>
+          
+          <p>
+            Parks Walks primarily services south Chicago - Hyde Park and surrounding neighborhoods. 
           </p>
 
           <div className="about-highlights">
