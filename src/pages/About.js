@@ -16,7 +16,7 @@ export default function About() {
         <div className="about-copy">
           <h2>Hi, I'm Jasmine!</h2>
           <p>
-            Originally form St. Louis, Missouri, I moved to Chicago to attend college. In pursuit of music, I came across dog-walking. At the time I was apart of a three-person team
+            Originally from St. Louis, Missouri, I moved to Chicago in 2010 to attend college. In pursuit of music, I came across dog-walking. At the time I was apart of a three-person team
             that services Wicker Park and surrounding neighborhoods. I enjoyed the work. Physically demanding yet never changing and challenging. 
           </p>
 
