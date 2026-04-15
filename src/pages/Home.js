@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Carousel from "../components/Carousel";
+import ServiceAreaMap from "../components/ServiceAreaMap";
 
 const services = [
   {
@@ -179,11 +180,13 @@ export default function Home() {
 
       <section className="section-card">
         <h2>Service Areas</h2>
-          <div className="service-area-card">
-            <h2>
+          <div id="service-area">
+            <h3>
               West Town, Tri-Taylor, South Loop, Bronzeville, Hyde Park, Southshore, Grand Boulevard, Kenwood,
               Logan Square, Avondale, Bucktown, Humboldt Park and Ukranian Village. 
-            </h2>
+            </h3>
+
+            <ServiceAreaMap />
           </div>
       </section>
 

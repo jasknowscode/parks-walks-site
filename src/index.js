@@ -8,6 +8,8 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App.js";
 import "./index.css";
 
+import "leaflet/dist/leaflet.css";
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
