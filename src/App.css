@@ -279,13 +279,13 @@ section + section {
 
 .service-card {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   justify-content: space-between;
   width: 100%;
   min-height: 320px;
   gap: 16px;
   align-items: center;
-  border-radius: var(--border);
+  border-radius: var(--radius);
   text-align: center;
   transition: transform 160ms ease, box-shadow 160ms ease;
   padding: 20px;
@@ -588,7 +588,7 @@ section + section {
 
 /* Services page: stacked cards with expandable details */
 .service-card--stack {
-  padding: 20;
+  padding: 20px;
 }
 
 .service-card--stack .service-content {
@@ -664,10 +664,11 @@ section + section {
 @media (max-width: 1200px) {
 
   .about-layout {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
   .about-photo {
     height: 260px;
+    width: 100%;
   }
 }
 

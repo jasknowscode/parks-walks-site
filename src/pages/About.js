@@ -33,7 +33,7 @@ export default function About() {
         <div className="about-copy">
           <h2>Hi, I'm Jasmine!</h2>
           <p>
-            Originally from St. Louis, Missouri, I moved to Chicago in 2010 to attend college. In pursuit of music, I came across dog-walking. At the time I was apart of a three-person team
+            Originally from St. Louis, Missouri, I moved to Chicago in 2010 to attend college. In my persistent pursuit of a career in music, I came across dog-walking as a side-hustle. At the time I was apart of a three-person team
             that services Wicker Park and surrounding neighborhoods. I enjoyed the work! I was touring a lot, so the work was physically demanding yet flexible and ever changing and challenging. 
           </p>
 
@@ -51,7 +51,8 @@ export default function About() {
           </p>
           
           <p>
-            Parks Walks primarily services south Chicago - Hyde Park and surrounding neighborhoods. 
+            My approach to handling is very intuitive and has come from years of various hands on experience. I have non-formal training in handling leash reactive dogs, senior pets, 
+            and administering medication. I'm CPR trained and insured, as well. Parks Walks primarily services south Chicago - Hyde Park and surrounding neighborhoods. 
           </p>
 
           <div className="about-highlights">

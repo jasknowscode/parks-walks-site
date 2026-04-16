@@ -13,7 +13,7 @@ const services = [
     img: `${process.env.PUBLIC_URL}/assets/service-walk.png`,
     alt: "Dog walking in the neighborhood",
     details: [
-      "20 / 30 / 60 minute walk options",
+      "20 / 30 / 55 minute walk options",
       "Fresh water + quick home check included",
       "GPS + photo updates after each walk",
       "Ideal for busy workdays or high-energy pups",
@@ -21,7 +21,7 @@ const services = [
   },
   {
     slug: "drop-ins",
-    title: "Drop-In Visits",
+    title: "Drop-In",
     short: "Drop-ins for puppies, seniors, meds, and small pets.",
     price: "Starting at $25",
     img: `${process.env.PUBLIC_URL}/assets/service-dropin.png`,
@@ -53,7 +53,7 @@ const services = [
     short: "Care during your pet-friendly hotel stay so your pet gets attention and routine.",
     price: "Starting at $65/hour (2-hour minimum)",
     img: `${process.env.PUBLIC_URL}/assets/service-hotel.png`,
-    alt: "Dog on leash outside a hotel",
+    alt: "Dog lying on a hotel bed",
     details: [
       "Great for events, dinners, and travel days",
       "Walks + in-room companionship",
