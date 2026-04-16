@@ -89,7 +89,7 @@ export default function Home() {
       <div className="landing-hero" id="home">
         <header className="hero">
           <Carousel />
-          <h1>Reliable, insured pet care you can rely on.</h1>
+          <h1>Reliable, insured pet care you can trust.</h1>
 
           <Link className="btn-primary" to="/contact">
             Book Now

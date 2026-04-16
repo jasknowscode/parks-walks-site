@@ -34,14 +34,13 @@ export default function About() {
           <h2>Hi, I'm Jasmine!</h2>
           <p>
             Originally from St. Louis, Missouri, I moved to Chicago in 2010 to attend college. In pursuit of music, I came across dog-walking. At the time I was apart of a three-person team
-            that services Wicker Park and surrounding neighborhoods. I enjoyed the work. Physically demanding yet ever changing and challenging. 
+            that services Wicker Park and surrounding neighborhoods. I enjoyed the work! I was touring a lot, so the work was physically demanding yet flexible and ever changing and challenging. 
           </p>
 
           <p> 
-            In 2019, I began sitting here and there on Rover and
-            before I knew it, I was running a business, full-time. I created Parks Walks in 2025 and took this leap after walking dogs and 
-            pet sitting for 10 years doing independent contractor work for various small - and some bigger - companies.
-            I enjoy building something as rewarding and fulfilling as a career in pet care. It's the kind of work that comes naturally to me!
+            In 2019, I began mostly pet sitting here and there on Rover for some extra cash but
+            before I knew it, I was running a business, full-time. After walking dogs and 
+            pet sitting for 10 years doing independent contractor work for various small - and some bigger - companies, Parks Walks was created in 2025.
           </p>
 
           <p>

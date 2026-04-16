@@ -11,8 +11,11 @@ function NavBar() {
           </Link>
         </div>
 
-        <h1 className="nav-name">PARKS WALKS</h1>
-
+        
+          <Link to="/">
+            <h1 className="nav-name">PARKS WALKS</h1>
+          </Link>
+        
         <ul>
           <li>
             <NavLink to="/" end>
