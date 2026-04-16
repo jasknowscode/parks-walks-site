@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef } from "react";
 import { useLocation } from "react-router-dom";
+import Footer from "../components/Footer";
 
 function Contact() {
   const location = useLocation();
@@ -111,6 +112,10 @@ function Contact() {
         {/* Scout embed mounts into this container */}
         <div ref={containerRef} className="scout-embed-container" />
       </section>
+      <>
+        {/* routes or page content */}
+        <Footer />
+      </>   
     </div>
   );
 }

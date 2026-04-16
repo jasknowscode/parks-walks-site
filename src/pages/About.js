@@ -1,3 +1,5 @@
+import Footer from "../components/Footer";
+
 export default function About() {
   return (
     <div>
@@ -7,29 +9,45 @@ export default function About() {
       </header>
 
       <section className="section-card about-layout">
+
+        <div className="about-img-container">
         <img
           className="about-photo"
           src={`${process.env.PUBLIC_URL}/assets/hero.png`}
-          alt="Jasmine with a dog"
+          alt="Jasmine walking a dog"
         />
+
+        <img
+          className="about-photo"
+          src={`${process.env.PUBLIC_URL}assets/about-4.png`}
+          alt="Jasmine and a dog making eye contact"
+        />
+
+        <img
+          className="about-photo"
+          src={`${process.env.PUBLIC_URL}/assets/about-3.jpg`}
+          alt="Photo of Jasmine"
+        />
+        </div>
 
         <div className="about-copy">
           <h2>Hi, I'm Jasmine!</h2>
           <p>
             Originally from St. Louis, Missouri, I moved to Chicago in 2010 to attend college. In pursuit of music, I came across dog-walking. At the time I was apart of a three-person team
-            that services Wicker Park and surrounding neighborhoods. I enjoyed the work. Physically demanding yet never changing and challenging. 
+            that services Wicker Park and surrounding neighborhoods. I enjoyed the work. Physically demanding yet ever changing and challenging. 
           </p>
 
           <p> 
-            In 2019, I began sitting on Rover and
-            from there, I found myself scheduling meet & greets back to back and running a legit business. I created Parks Walks in 2025 and took this leap after walking dogs and 
-            pet sitting for 10 years both doing independent contractor work.
-            I wanted to build a rewarding and fulfilling career in pet care, doing what comes most natural to me: taking care of our furry friends!
+            In 2019, I began sitting here and there on Rover and
+            before I knew it, I was running a business, full-time. I created Parks Walks in 2025 and took this leap after walking dogs and 
+            pet sitting for 10 years doing independent contractor work for various small - and some bigger - companies.
+            I enjoy building something as rewarding and fulfilling as a career in pet care. It's the kind of work that comes naturally to me!
           </p>
 
           <p>
-            I have a 6 year old cat, Kopa! And he is absolutely a motivating factor in the way that I care. 
-            With your individual needs and pet's needs in mind, my goal is to provide
+            I have a 6 year old cat, Kopa! And he is an absolute motivating factor behind the care and attention I provide. Animals deserve 
+            kindness, gentleness and stable lives like us all. I find joy in contributing to pets having healthy, fulfilling and well-rounded lives. 
+            It's the circle of life! With your individual needs and your pet's needs in mind, my goal is to provide
             reliable, dependable, compassionate care that gives pet parents peace of mind.
           </p>
           
@@ -44,6 +62,13 @@ export default function About() {
           </div>
         </div>
       </section>
+      <>
+        {/* routes or page content */}
+        <Footer />
+      </>   
+
     </div>
+
+    
   );
 }

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Carousel from "../components/Carousel";
 import ServiceAreaMap from "../components/ServiceAreaMap";
+import Footer from "../components/Footer";
 
 const services = [
   {
@@ -156,7 +157,7 @@ export default function Home() {
 
         <div className="steps">
             <div className="step">
-                <h3>Step 1: Request Us By Completing the Contact Form</h3>
+                <h3>Step 1: Complete the "Contact" Form</h3>
                 <p> Tell us about your pet's needs and your specify your neighborhood.</p>
             </div>
             <div className="step">
@@ -179,20 +180,28 @@ export default function Home() {
       </section>
 
       <section className="section-card">
-        <h2>Service Areas</h2>
-          <div id="service-area">
-            <h3>
-              West Town, Tri-Taylor, South Loop, Bronzeville, Hyde Park, Southshore, Grand Boulevard, Kenwood,
-              Logan Square, Avondale, Bucktown, Humboldt Park and Ukranian Village. 
-            </h3>
+        <h2>Service Area</h2>
+        <h2>
+          Serving Chicago neighborhoods including West Town, Tri-Taylor, South Loop,
+          Bronzeville, Hyde Park, South Shore, Grand Boulevard, Kenwood, Logan Square,
+          Avondale, Bucktown, Humboldt Park, and Ukrainian Village.
+        </h2>
 
-            <ServiceAreaMap />
-          </div>
+        <ServiceAreaMap />
+
+        <p>Not sure if you’re in range? Send a message and I’ll confirm.</p>
       </section>
+
+
 
       <section className="section-card">
         <h2> Reviews </h2>
       </section>
+
+<>
+  {/* routes or page content */}
+  <Footer />
+</>    
     </>
  );
 }

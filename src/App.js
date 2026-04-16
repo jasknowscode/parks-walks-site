@@ -7,6 +7,8 @@ import Contact from "./pages/Contact";
 
 import "./App.css";
 
+import Footer from "./components/Footer";
+
 export default function App() {
   return (
     <div
