@@ -189,7 +189,7 @@ export default function Home() {
 
         <ServiceAreaMap />
 
-        <p>Not sure if you’re in range? Send a message and I’ll confirm.</p>
+        <p>Not sure if you are in range? Send a message and we will confirm.</p>
       </section>
 
 

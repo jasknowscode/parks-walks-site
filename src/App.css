@@ -702,15 +702,14 @@ section + section {
 
 .footer-brand {
   display: flex;
-  flex-direction: column;
-  align-items: start;
+  flex-flow: wrap row;
+  justify-content: baseline;
+  gap: 18px;
 }
 
 .footer-dog-logo {
-  width: 88px;
-  height: auto;
-  display: inline;
-  margin-bottom: 1rem;
+  max-width: 60px;
+  margin: 0;
   opacity: 0.95;
 }
 
@@ -724,15 +723,15 @@ section + section {
 .footer-bonded {
   margin: 0;
   display: inline;
-  padding: 0.55rem 0.95rem;
-  align-items: start;
+  padding: 0.55rem;
   color: var(--sage);
   font-weight: 600;
 }
 
 .footer-badge {
-  max-width: 4.5em;
+  max-width: 3.5em;
   display: block;
+  margin: 3px;
 }
 
 .footer-links {
@@ -824,7 +823,7 @@ section + section {
   }
 
   .footer-dog-logo {
-    width: 72px;
+    width: 88px;
   }
 }
 
@@ -834,4 +833,5 @@ section + section {
   font-size: 2.4rem;
   line-height: 1;
   color: var(--soft-blue);
+  align-self: end;
 }
