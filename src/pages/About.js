@@ -31,7 +31,7 @@ export default function About() {
         </div>
 
         <div className="about-copy">
-          <h2>Hi, I'm Jasmine!</h2>
+          <h2 className="section-heading">Hi, I'm Jasmine!</h2>
           <p>
             Originally from St. Louis, Missouri, I moved to Chicago in 2010 to attend college. In my persistent pursuit of a career in music, I came across dog-walking as a side-hustle. At the time I was apart of a three-person team
             that services Wicker Park and surrounding neighborhoods. I enjoyed the work! I was touring a lot, so the work was physically demanding yet flexible and ever changing and challenging. 

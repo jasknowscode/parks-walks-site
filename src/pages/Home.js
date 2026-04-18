@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Carousel from "../components/Carousel";
 import ServiceAreaMap from "../components/ServiceAreaMap";
+import Reviews from "../components/Reviews";
 import Footer from "../components/Footer";
 
 const services = [
   {
     slug: "dog-walking",
     title: "Dog Walking",
-    short: "Structured walks tailored to your dog’s pace, age, and energy level.",
     price: "Starting at $25",
     img: `${process.env.PUBLIC_URL}/assets/service-walk.png`,
     alt: "Dog walking in the neighborhood",
@@ -22,7 +22,6 @@ const services = [
   {
     slug: "drop-ins",
     title: "Drop-In",
-    short: "Drop-ins for puppies, seniors, meds, and small pets.",
     price: "Starting at $25",
     img: `${process.env.PUBLIC_URL}/assets/service-dropin.png`,
     alt: "Gentle drop-in visit with a pet at home",
@@ -35,13 +34,13 @@ const services = [
   },
   {
     slug: "in-home-care",
-    title: "Overnight Petsitting",
-    short: "Overnight or extended care in your pet’s home for comfort and routine.",
+    title: "Overnight",
     price: "Starting at $175/night",
     img: `${process.env.PUBLIC_URL}/assets/service-sit.png`,
     alt: "Pet resting at home during a sit",
     details: [
       "Overnight presence to maintain routine",
+      "Time left alone caps at 4-6 hours depending on pets needs",
       "Feedings, potty breaks, play, and medication support",
       "Home care: bring in packages, lights, basic tidying",
       "Photo + written updates included",
@@ -50,12 +49,12 @@ const services = [
   {
     slug: "hotel",
     title: "Hotel Concierge",
-    short: "Care during your pet-friendly hotel stay so your pet gets attention and routine.",
-    price: "Starting at $65/hour (2-hour minimum)",
+    price: "Starting at $65/hour",
     img: `${process.env.PUBLIC_URL}/assets/service-hotel.png`,
     alt: "Dog lying on a hotel bed",
     details: [
-      "Great for events, dinners, and travel days",
+      "Minimum booking of two hours",
+      "Great for travelers with events, dinners, or work meetings",
       "Walks + in-room companionship",
       "Flexible timing based on your schedule",
       "Photo updates while you’re out",
@@ -64,8 +63,7 @@ const services = [
   {
     slug: "wedding",
     title: "Wedding Handler",
-    short: "Support so your pet can be part of your special day—photos, ceremony, transitions.",
-    price: "$375",
+    price: "Starting at $375",
     img: `${process.env.PUBLIC_URL}/assets/service-wedding.png`,
     alt: "Dog prepared for a wedding photo",
     details: [
@@ -98,7 +96,7 @@ export default function Home() {
       </div>
 
 <section id="service-grid" aria-labelledby="services-heading">
-  <h2 id="services-heading">Services</h2>
+  <h2 className="section-heading">Services</h2>
 
   <div className="services-grid">
     {services.map((s) => {
@@ -110,7 +108,6 @@ export default function Home() {
 
           <div className="service-content">
             <h3>{s.title}</h3>
-            <p>{s.short}</p>
             <p className="price">{s.price}</p>
 
           <div id="button-container">
@@ -153,7 +150,7 @@ export default function Home() {
 
 
       <section className="section-card">
-        <h2>How it works!</h2>
+        <h2 className="section-heading">How it works!</h2>
 
         <div className="steps">
             <div className="step">
@@ -179,23 +176,18 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section-card">
-        <h2>Service Area</h2>
-        <h2>
-          Serving Chicago neighborhoods including West Town, Tri-Taylor, South Loop,
-          Bronzeville, Hyde Park, South Shore, Grand Boulevard, Kenwood, Logan Square,
-          Avondale, Bucktown, Humboldt Park, and Ukrainian Village.
-        </h2>
-
+      <section className="service-area">
+        <h2 className="section-heading">Service Area</h2>
+        <p>
+          Serving Hyde Park, Kenwood, South Shore, Woodlawn, Bridgeport,
+          McKinley Park, South Loop, West Town, Bucktown, Wicker Park, and Ukrainian Village.
+        </p>
         <ServiceAreaMap />
-
-        <p>Not sure if you are in range? Send a message and we will confirm.</p>
       </section>
 
 
-
-      <section className="section-card">
-        <h2> Reviews </h2>
+      <section>
+        <Reviews />
       </section>
 
 <>

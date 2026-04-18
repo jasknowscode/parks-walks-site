@@ -1,52 +1,95 @@
-import { MapContainer, TileLayer, Circle, Marker, Popup } from "react-leaflet";
-import L from "leaflet";
-import "leaflet/dist/leaflet.css";
+import { useEffect, useRef, useState } from "react";
 
-// Fix default marker icons in React/Leaflet
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
-  iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
-});
+function ServiceAreaMap() {
+  const mapRef = useRef(null);
+  const [error, setError] = useState("");
 
-const center = [41.830, -87.650]; // central Chicago-ish
+  useEffect(() => {
+    let intervalId;
 
-const areas = [
-  { name: "Hyde Park", position: [41.7943, -87.5907] },
-  { name: "Kenwood", position: [41.8097, -87.5934] },
-  { name: "South Loop", position: [41.8600, -87.6250] },
-  { name: "Bronzeville", position: [41.8317, -87.6177] },
-  { name: "West Town", position: [41.8936, -87.6722] },
-  { name: "Logan Square", position: [41.9295, -87.7071] },
-];
+    const initMap = () => {
+      if (!window.google || !window.google.maps || !mapRef.current) {
+        setError("Google Maps failed to load.");
+        return;
+      }
 
-export default function ServiceAreaMap() {
+      const map = new window.google.maps.Map(mapRef.current, {
+        center: { lat: 41.8505, lng: -87.6505 },
+        zoom: 11,
+        disableDefaultUI: true,
+      });
+
+      const serviceZones = [
+        {
+          name: "South Lakefront",
+          center: { lat: 41.7945, lng: -87.594 },
+          radius: 4200,
+        },
+        {
+          name: "Southwest",
+          center: { lat: 41.8315, lng: -87.673 },
+          radius: 2600,
+        },
+        {
+          name: "South Loop",
+          center: { lat: 41.8575, lng: -87.6255 },
+          radius: 1800,
+        },
+        {
+          name: "Near Northwest",
+          center: { lat: 41.9085, lng: -87.6775 },
+          radius: 3000,
+        },
+      ];
+
+      serviceZones.forEach((zone) => {
+        const circle = new window.google.maps.Circle({
+          strokeColor: "#5a7d6a",
+          strokeOpacity: 0.9,
+          strokeWeight: 2,
+          fillColor: "#5a7d6a",
+          fillOpacity: 0.14,
+          map,
+          center: zone.center,
+          radius: zone.radius,
+        });
+
+        circle.addListener("click", () => {
+          console.log(zone.name);
+        });
+      });
+    };
+
+    if (window.google && window.google.maps) {
+      initMap();
+    } else {
+      intervalId = setInterval(() => {
+        if (window.google && window.google.maps) {
+          clearInterval(intervalId);
+          initMap();
+        }
+      }, 300);
+    }
+
+    return () => {
+      if (intervalId) clearInterval(intervalId);
+    };
+  }, []);
+
   return (
-    <div className="service-map-wrap">
-      <MapContainer
-        center={center}
-        zoom={11}
-        scrollWheelZoom={false}
-        className="service-map"
-      >
-        <TileLayer
-          attribution='&copy; OpenStreetMap contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
-
-        <Circle
-          center={center}
-          radius={9000}
-          pathOptions={{ color: "#8faf9f", fillColor: "#8faf9f", fillOpacity: 0.15 }}
-        />
-
-        {areas.map((area) => (
-          <Marker key={area.name} position={area.position}>
-            <Popup>{area.name}</Popup>
-          </Marker>
-        ))}
-      </MapContainer>
+    <div>
+      {error && <p>{error}</p>}
+      <div
+        ref={mapRef}
+        style={{
+          width: "100%",
+          height: "420px",
+          borderRadius: "24px",
+          overflow: "hidden",
+        }}
+      />
     </div>
   );
 }
+
+export default ServiceAreaMap;
