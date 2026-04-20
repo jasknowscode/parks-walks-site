@@ -1,7 +1,6 @@
-import React from "react";
 import Slider from "react-slick";
 
-const Carousel = () => {
+export default function Carousel() {
   const settings = {
     dots: true,
     infinite: true,
@@ -13,7 +12,6 @@ const Carousel = () => {
     arrows: false,
   };
 
-  // These files must exist in: public/assets/
   const images = [
     "/assets/carousel-1.png",
     "/assets/carousel-2.png",
@@ -27,17 +25,15 @@ const Carousel = () => {
     <div className="carousel">
       <Slider {...settings}>
         {images.map((src, i) => (
-          <div key={src}>
+          <div key={i}>
             <img
               src={src}
               alt={`Service slide ${i + 1}`}
               className="carousel-image"
-            /> 
+            />
           </div>
         ))}
       </Slider>
     </div>
   );
-};
-
-export default Carousel;
+}
