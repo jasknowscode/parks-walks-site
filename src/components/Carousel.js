@@ -32,7 +32,7 @@ const Carousel = () => {
               src={src}
               alt={`Service slide ${i + 1}`}
               className="carousel-image"
-            />
+            /> 
           </div>
         ))}
       </Slider>

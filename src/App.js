@@ -1,13 +1,12 @@
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
-
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 
 import "./App.css";
 
-import Footer from "./components/Footer";
+
 
 export default function App() {
   return (

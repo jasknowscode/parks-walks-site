@@ -181,19 +181,16 @@ export default function Home() {
         <p>
           Serving Hyde Park, Kenwood, South Shore, Woodlawn, Bridgeport,
           McKinley Park, South Loop, West Town, Bucktown, Wicker Park, and Ukrainian Village.
-        </p>
+        </p>     
         <ServiceAreaMap />
       </section>
 
 
-      <section>
-        <Reviews />
-      </section>
+      <Reviews />
+      <>
 
-<>
-  {/* routes or page content */}
-  <Footer />
-</>    
+      <Footer />
+      </>    
     </>
  );
 }

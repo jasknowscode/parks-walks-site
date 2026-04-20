@@ -1,4 +1,4 @@
-import { FaInstagram, FaFacebookF } from "react-icons/fa";
+
 
 export default function Footer() {
   return (
@@ -57,7 +57,7 @@ export default function Footer() {
               aria-label="Instagram"
               className="social-icon instagram"
             >
-              <FaInstagram />
+              Instagram
             </a>
 
             <a
@@ -67,14 +67,14 @@ export default function Footer() {
               aria-label="Facebook"
               className="social-icon facebook"
             >
-              <FaFacebookF />
+              Facebook
             </a>
           </div>
         </div>
       </div>
 
       <div className="footer-bottom">
-        <p>© {new Date().getFullYear()} Parks Walks. All rights reserved.</p>
+        <p> {new Date().getFullYear()} Parks Walks. All rights reserved. ©</p>
       </div>
     </footer>
   );
