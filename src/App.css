@@ -9,6 +9,12 @@
   --radius: 16px;
   --shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
   --border: 1px solid rgba(0, 0, 0, 0.08);
+
+  --font-sans: "Quattrocento Sans", "Avenir Next", Avenir, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Fraunces", Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-display: "Chewy", "Trebuchet MS", "Gill Sans", "Avenir Next", Avenir,
+    sans-serif;
 }
 
 /* =========
@@ -25,7 +31,7 @@ html {
 
 body {
   margin: 0;
-  font-family: "Quattrocento Sans", sans-serif;
+  font-family: var(--font-sans);
   background-color: #f6f7f4;
   color: var(--charcoal);
   line-height: 1.6;
@@ -40,7 +46,7 @@ a:hover {
 }
 
 p {
-  font-family: "Fraunces", serif;
+  font-family: var(--font-serif);
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -719,10 +725,13 @@ section + section {
 ========= */
 
 .site-footer {
-  background: #f3f4f1;
+  background: #ecefe8;
   border-top: 1px solid rgba(111, 117, 115, 0.16);
   margin-top: 4rem;
   padding: 3rem 2rem 1.5rem;
+}
+.footer-logo-text {
+  font-family: var(--font-display)
 }
 
 .footer-inner {
@@ -736,7 +745,7 @@ section + section {
 
 .footer-col h3 {
   margin: 0 0 1rem;
-  font-family: "Quattrocento Sans", sans-serif;
+  font-family: var(--font-sans);
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--charcoal);
@@ -745,12 +754,12 @@ section + section {
 .footer-brand {
   display: flex;
   flex-flow: wrap row;
-  justify-content: baseline;
+  justify-content: center;
   gap: 18px;
 }
 
 .footer-dog-logo {
-  max-width: 60px;
+  max-width: 65px;
   margin: 0;
   opacity: 0.95;
 }
@@ -813,6 +822,7 @@ section + section {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 10px;
   padding: 0.7rem 1rem;
   min-height: 48px;
   background: transparent;
@@ -820,6 +830,11 @@ section + section {
   text-decoration: none;
   font-weight: 600;
   transition: transform 160ms ease, background 160ms ease;
+}
+
+.social-svg {
+  font-size: 1.1em;
+  flex-shrink: 0;
 }
 
 .social-icon:hover {
@@ -836,6 +851,14 @@ section + section {
   color: #7c94c9;
 }
 
+.social-icon.instagram:hover {
+  background: rgba(180, 106, 216, 0.08);
+}
+
+.social-icon.facebook:hover {
+  background: rgba(124, 148, 201, 0.08);
+}
+
 .footer-bottom {
   max-width: 1200px;
   margin: 2rem auto 0;
@@ -847,6 +870,13 @@ section + section {
   margin: 0;
   color: var(--soft-gray);
   font-size: 0.95rem;
+}
+
+.site-footer p,
+.site-footer li,
+.site-footer a {
+  font-family: var(--font-sans);
+  color: var(--soft-gray);
 }
 
 /* =========

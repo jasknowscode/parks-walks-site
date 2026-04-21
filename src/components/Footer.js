@@ -1,4 +1,4 @@
-
+import { FaInstagram, FaFacebookF } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -47,29 +47,28 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div className="footer-col footer-social-col">
-          <h3>Follow</h3>
-          <div className="footer-social">
-            <a
-              href="https://instagram.com/parkswalks"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Instagram"
-              className="social-icon instagram"
-            >
-              Instagram
-            </a>
+        <div className="footer-social">
+          <a
+            href="https://instagram.com/yourhandle"
+            target="_blank"
+            rel="noreferrer"
+            className="social-icon instagram"
+            aria-label="Instagram"
+          >
+            <FaInstagram className="social-svg" />
+            <span>Instagram</span>
+          </a>
 
-            <a
-              href="https://facebook.com/parkswalks"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Facebook"
-              className="social-icon facebook"
-            >
-              Facebook
-            </a>
-          </div>
+          <a
+            href="https://facebook.com/yourhandle"
+            target="_blank"
+            rel="noreferrer"
+            className="social-icon facebook"
+            aria-label="Facebook"
+          >
+            <FaFacebookF className="social-svg" />
+            <span>Facebook</span>
+          </a>
         </div>
       </div>
 

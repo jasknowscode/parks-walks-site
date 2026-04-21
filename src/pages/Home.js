@@ -9,12 +9,12 @@ const services = [
   {
     slug: "dog-walking",
     title: "Dog Walking",
-    price: "Starting at $25",
+    price: "Starting at $30",
     img: `${process.env.PUBLIC_URL}/assets/service-walk.png`,
     alt: "Dog walking in the neighborhood",
     details: [
-      "20 / 30 / 55 minute walk options",
-      "Fresh water + quick home check included",
+      "30 / 60 minute walk options",
+      "Fresh water + treats if allowed",
       "GPS + photo updates after each walk",
       "Ideal for busy workdays or high-energy pups",
     ],
@@ -24,26 +24,26 @@ const services = [
     title: "Drop-In",
     price: "Starting at $25",
     img: `${process.env.PUBLIC_URL}/assets/service-dropin.png`,
-    alt: "Gentle drop-in visit with a pet at home",
+    alt: "Drop-in visit with a pet at home",
     details: [
-      "Perfect for puppies, seniors, cats, and critters",
-      "Medication support if needed",
-      "Litter / potty cleanup and fresh water",
-      "Quick playtime + enrichment",
+      "Perfect for puppies, cats, and small critters",
+      "Medication and meal support",
+      "Litter / cleanup and fresh water",
+      "Quick potty break, playtime + enrichment",
     ],
   },
   {
     slug: "in-home-care",
-    title: "Overnight",
+    title: "Day sit or Overnight",
     price: "Starting at $175/night",
     img: `${process.env.PUBLIC_URL}/assets/service-sit.png`,
     alt: "Pet resting at home during a sit",
     details: [
-      "Overnight presence to maintain routine",
-      "Time left alone caps at 4–6 hours depending on pet needs",
-      "Feedings, potty breaks, play, and medication support",
+      "Perfect for dogs who do best at home",
+      "Time left alone caps at 4–6 hours depending on pet's needs",
+      "Feedings, potty breaks, play, meal, and medication support",
       "Home care: bring in packages, lights, basic tidying",
-      "Photo + written updates included",
+      "Photos + written updates included",
     ],
   },
   {
@@ -54,7 +54,7 @@ const services = [
     alt: "Dog lying on a hotel bed",
     details: [
       "Minimum booking of two hours",
-      "Great for travelers with events, dinners, or work meetings",
+      "Boarding available for pets 40 pounds and under",
       "Walks + in-room companionship",
       "Flexible timing based on your schedule",
       "Photo updates while you’re out",
@@ -226,7 +226,7 @@ export default function Home() {
         </p>
 
         <ServiceAreaMap />
-        
+
       </section>
 
       <Reviews />

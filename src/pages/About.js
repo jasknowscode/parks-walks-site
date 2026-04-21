@@ -26,35 +26,35 @@ export default function About() {
         <img
           className="about-photo"
           src={`${process.env.PUBLIC_URL}/assets/about-3.jpg`}
-          alt="Photo of Jasmine"
+          alt="CEO and Owner Jasmine Parks"
         />
         </div>
 
         <div className="about-copy">
           <h2 className="section-heading">Hi, I'm Jasmine!</h2>
           <p>
-            Originally from St. Louis, Missouri, I moved to Chicago in 2010 to attend college. In my persistent pursuit of a career in music, I came across dog-walking as a side-hustle. At the time I was apart of a three-person team
-            that services Wicker Park and surrounding neighborhoods. I enjoyed the work! I was touring a lot, so the work was physically demanding yet flexible and ever changing and challenging. 
-          </p>
-
-          <p> 
-            In 2019, I began mostly pet sitting here and there on Rover for some extra cash but
-            before I knew it, I was running a business, full-time. After walking dogs and 
-            pet sitting for 10 years doing independent contractor work for various small - and some bigger - companies, Parks Walks was created in 2025.
+            Pet care should feel calm, consistent, and personal — not like handing your pet off to someone new every time. 
+            I’m Jasmine, the owner of Parks Walks. Originally from St. Louis, I moved to Chicago in 2010 to attend college and pursue a career in music. 
+            Along the way, I found dog walking — what started as a side job quickly became something I genuinely loved.
           </p>
 
           <p>
-            I have a 6 year old cat, Kopa! And he is an absolute motivating factor behind the care and attention I provide. Animals deserve 
-            kindness, gentleness and stable lives like us all. I find joy in contributing to pets having healthy, fulfilling and well-rounded lives. 
-            It's the circle of life! With your individual needs and your pet's needs in mind, my goal is to provide
-            reliable, dependable, compassionate care that gives pet parents peace of mind.
-          </p>
-          
-          <p>
-            My approach to handling is very intuitive and has come from years of various hands on experience. I have non-formal training in handling leash reactive dogs, senior pets, 
-            and administering medication. I'm CPR trained and insured, as well. Parks Walks primarily services south Chicago - Hyde Park and surrounding neighborhoods. 
+            Over the past 10+ years, I’ve worked with a range of small and large pet care companies, as well as independently through platforms like Rover. 
+            What I saw again and again was how inconsistent pet care could feel for both pets and their owners. That experience led me to build something more intentional. 
+            Parks Walks was established in 2025 as a fully independent service focused on reliability, communication, and thoughtful care.
           </p>
 
+          <p>
+            My approach is intuitive and grounded in hands-on experience. 
+            I work with leash-reactive dogs, senior pets, and animals with specific routines or medical needs, including medication administration. 
+            I’m CPR trained and fully insured, and I keep my client list intentionally small to ensure every pet receives focused, consistent attention.
+          </p>
+
+          <p>
+            At home, I have a 6-year-old cat named Kopa, who constantly reminds me how important patience, gentleness, and routine are in an animal’s life. 
+            That perspective carries into every visit — whether it’s a quick walk, a drop-in, or extended care. 
+            Parks Walks primarily serves Hyde Park and surrounding South Chicago neighborhoods, with a goal to provide dependable, compassionate care that gives you peace of mind and gives your pet a stable, positive experience.
+          </p>
           <div className="about-highlights">
             <div className="about-pill">Reliable updates</div>
             <div className="about-pill">Routine-focused care</div>

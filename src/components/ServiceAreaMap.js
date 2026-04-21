@@ -5,63 +5,74 @@ function ServiceAreaMap() {
   const [error, setError] = useState("");
 
   useEffect(() => {
+    const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+
+    if (!apiKey) {
+      setError("Google Maps API key is missing.");
+      return;
+    }
+
+    let cancelled = false;
     let intervalId;
 
-    const initMap = () => {
-      if (!window.google || !window.google.maps || !mapRef.current) {
-        setError("Google Maps failed to load.");
-        return;
-      }
+    const initMap = async () => {
+      try {
+        if (!window.google || !window.google.maps || !mapRef.current) {
+          setError("Google Maps failed to load.");
+          return;
+        }
 
-      const map = new window.google.maps.Map(mapRef.current, {
-        center: { lat: 41.8505, lng: -87.6505 },
-        zoom: 11,
-        disableDefaultUI: true,
-      });
+        const { Map, Circle } = await window.google.maps.importLibrary("maps");
 
-      const serviceZones = [
-        {
-          name: "South Lakefront",
-          center: { lat: 41.7945, lng: -87.594 },
-          radius: 4200,
-        },
-        {
-          name: "Southwest",
-          center: { lat: 41.8315, lng: -87.673 },
-          radius: 2600,
-        },
-        {
-          name: "South Loop",
-          center: { lat: 41.8575, lng: -87.6255 },
-          radius: 1800,
-        },
-        {
-          name: "Near Northwest",
-          center: { lat: 41.9085, lng: -87.6775 },
-          radius: 3000,
-        },
-      ];
+        if (cancelled || !mapRef.current) return;
 
-      serviceZones.forEach((zone) => {
-        const circle = new window.google.maps.Circle({
+        const chicagoCenter = { lat: 41.8369, lng: -87.6486 };
+
+        const map = new Map(mapRef.current, {
+          center: chicagoCenter,
+          zoom: 11,
+          disableDefaultUI: true,
+        });
+
+        new Circle({
+          map,
+          center: chicagoCenter,
+          radius: 9875,
           strokeColor: "#5a7d6a",
           strokeOpacity: 0.9,
           strokeWeight: 2,
           fillColor: "#5a7d6a",
           fillOpacity: 0.14,
-          map,
-          center: zone.center,
-          radius: zone.radius,
         });
-
-        circle.addListener("click", () => {
-          console.log(zone.name);
-        });
-      });
+      } catch (err) {
+        console.error(err);
+        setError("Google Maps failed to initialize.");
+      }
     };
+
+    const existingScript = document.querySelector(
+      'script[data-google-maps="true"]'
+    );
 
     if (window.google && window.google.maps) {
       initMap();
+      return () => {
+        cancelled = true;
+        if (intervalId) clearInterval(intervalId);
+      };
+    }
+
+    if (!existingScript) {
+      const script = document.createElement("script");
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&loading=async`;
+      script.async = true;
+      script.defer = true;
+      script.dataset.googleMaps = "true";
+      script.onload = () => initMap();
+      script.onerror = () => {
+        setError("Google Maps script failed to load.");
+      };
+      document.head.appendChild(script);
     } else {
       intervalId = setInterval(() => {
         if (window.google && window.google.maps) {
@@ -72,22 +83,15 @@ function ServiceAreaMap() {
     }
 
     return () => {
+      cancelled = true;
       if (intervalId) clearInterval(intervalId);
     };
   }, []);
 
   return (
-    <div>
+    <div className="service-map-wrap">
       {error && <p>{error}</p>}
-      <div
-        ref={mapRef}
-        style={{
-          width: "100%",
-          height: "420px",
-          borderRadius: "24px",
-          overflow: "hidden",
-        }}
-      />
+      <div ref={mapRef} className="service-map" />
     </div>
   );
 }
