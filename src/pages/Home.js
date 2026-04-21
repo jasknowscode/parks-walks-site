@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Carousel from "../components/Carousel";
 import ServiceAreaMap from "../components/ServiceAreaMap";
@@ -40,7 +40,7 @@ const services = [
     alt: "Pet resting at home during a sit",
     details: [
       "Overnight presence to maintain routine",
-      "Time left alone caps at 4-6 hours depending on pets needs",
+      "Time left alone caps at 4–6 hours depending on pet needs",
       "Feedings, potty breaks, play, and medication support",
       "Home care: bring in packages, lights, basic tidying",
       "Photo + written updates included",
@@ -76,10 +76,14 @@ const services = [
 ];
 
 export default function Home() {
-  const [openSlug, setOpenSlug] = useState(null);
+  const [selectedService, setSelectedService] = useState(null);
 
-  function toggle(slug) {
-    setOpenSlug((cur) => (cur === slug ? null : slug));
+  function openService(service) {
+    setSelectedService(service);
+  }
+
+  function closeService() {
+    setSelectedService(null);
   }
 
   return (
@@ -95,84 +99,121 @@ export default function Home() {
         </header>
       </div>
 
-<section id="service-grid" aria-labelledby="services-heading">
-  <h2 className="section-heading">Services</h2>
+      <section id="service-grid" aria-labelledby="services-heading">
+        <h2 className="section-heading">Services</h2>
 
-  <div className="services-grid">
-    {services.map((s) => {
-      const isOpen = openSlug === s.slug;
+        <div className="services-grid">
+          {services.map((s) => (
+            <article className="service-card service-card--stack" key={s.slug}>
+              <img
+                className="service-image service-image--wide"
+                src={s.img}
+                alt={s.alt}
+              />
 
-      return (
-        <article className={`service-card service-card--stack`} key={s.slug}>
-          <img className="service-image service-image--wide" src={s.img} alt={s.alt} />
+              <div className="service-content">
+                <h3>{s.title}</h3>
+                <p className="price">{s.price}</p>
 
-          <div className="service-content">
-            <h3>{s.title}</h3>
-            <p className="price">{s.price}</p>
+                <div className="service-actions">
+                  <button
+                    type="button"
+                    className="btn-secondary"
+                    onClick={() => openService(s)}
+                  >
+                    View details
+                  </button>
 
-          <div id="button-container">
-            <div className="service-actions">
-              <button
-                type="button"
-                className="btn-secondary"
-                aria-expanded={isOpen}
-                aria-controls={`${s.slug}-details`}
-                onClick={() => toggle(s.slug)}
-              >
-                {isOpen ? "Hide details" : "View details"}
-              </button>
+                  <Link
+                    className="btn-primary btn-primary--sm"
+                    to={`/contact?service=${encodeURIComponent(s.title)}`}
+                  >
+                    Book This
+                  </Link>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
 
-              <Link
-                className="btn-primary btn-primary--sm"
-                to={`/contact?service=${encodeURIComponent(s.title)}`}
-              >
-                Book This
-              </Link>
-            </div>
-          </div>
-
-            <div
-              id={`${s.slug}-details`}
-              className={`service-details ${isOpen ? "is-open" : ""}`}
+      {selectedService && (
+        <div className="service-modal-overlay" onClick={closeService}>
+          <div
+            className="service-modal"
+            onClick={(e) => e.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="service-modal-title"
+          >
+            <button
+              type="button"
+              className="service-modal-close"
+              onClick={closeService}
+              aria-label="Close service details"
             >
+              ×
+            </button>
+
+            <img
+              src={selectedService.img}
+              alt={selectedService.alt}
+              className="service-modal-image"
+            />
+
+            <h3 id="service-modal-title">{selectedService.title}</h3>
+            <p className="service-modal-price">{selectedService.price}</p>
+
+            <div className="service-modal-body">
               <ul>
-                {s.details.map((line) => (
+                {selectedService.details.map((line) => (
                   <li key={line}>{line}</li>
                 ))}
               </ul>
             </div>
+
+            <Link
+              className="btn-primary"
+              to={`/contact?service=${encodeURIComponent(selectedService.title)}`}
+              onClick={closeService}
+            >
+              Book This Service
+            </Link>
           </div>
-        </article>
-      );
-    })}
-  </div>
-</section>
+        </div>
+      )}
 
-
-      <section className="section-card">
+      <section className="section-card" id="how-it-works">
         <h2 className="section-heading">How it works!</h2>
 
         <div className="steps">
-            <div className="step">
-                <h3>Step 1: Complete the "Contact" Form</h3>
-                <p> Tell us about your pet's needs and your specify your neighborhood.</p>
-            </div>
-            <div className="step">
-                <h3>Step 2: Schedule a Meet &amp; Greet</h3>
-                <p>Meet & greet is on us! We'll meet you and your pet, confirm dates, and discuss details about the visit.</p>
-            </div>
-            <div className="step">
-                <h3>Step 3: Onboard &amp; Confirm</h3>
-                <p>You will be onboarded to our platform "Scout" to receive booking confirmation, notes, photo updates and invoices. 
-                   Payment and a signed 'Agreement of Services' is required to confirm booking.
-                </p>
-            </div>
+          <div className="step">
+            <h3>Step 1: Complete the Contact Form</h3>
+            <p>Tell us about your pet&apos;s needs and specify your neighborhood.</p>
+          </div>
+
+          <div className="step">
+            <h3>Step 2: Schedule a Meet &amp; Greet</h3>
+            <p>
+              Meet &amp; greet is on us! We&apos;ll meet you and your pet, confirm
+              dates, and discuss details about the visit.
+            </p>
+          </div>
+
+          <div className="step">
+            <h3>Step 3: Onboard &amp; Confirm</h3>
+            <p>
+              You will be onboarded to our platform &quot;Scout&quot; to receive booking
+              confirmation, notes, photo updates and invoices. Payment and a signed
+              Agreement of Services is required to confirm booking.
+            </p>
+          </div>
         </div>
 
         <div style={{ textAlign: "center", marginTop: 18 }}>
-            <Link className="btn-primary" to="/contact">
-                Book a Meet &amp; Greet
-            </Link>
+          <Link className="btn-primary" to="/contact">
+            Book a Meet &amp; Greet
+          </Link>
         </div>
       </section>
 
@@ -180,17 +221,16 @@ export default function Home() {
         <h2 className="section-heading">Service Area</h2>
         <p>
           Serving Hyde Park, Kenwood, South Shore, Woodlawn, Bridgeport,
-          McKinley Park, South Loop, West Town, Bucktown, Wicker Park, and Ukrainian Village.
-        </p>     
+          McKinley Park, South Loop, West Town, Bucktown, Wicker Park, and
+          Ukrainian Village.
+        </p>
+
         <ServiceAreaMap />
+        
       </section>
 
-
       <Reviews />
-      <>
-
       <Footer />
-      </>    
     </>
- );
+  );
 }
