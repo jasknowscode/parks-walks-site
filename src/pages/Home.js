@@ -221,8 +221,8 @@ export default function Home() {
         <h2 className="section-heading">Service Area</h2>
         <p>
           Serving Hyde Park, Kenwood, South Shore, Woodlawn, Bridgeport,
-          McKinley Park, South Loop, West Town, Bucktown, Wicker Park, and
-          Ukrainian Village.
+          McKinley Park, South Loop, West Town, Bucktown, Wicker Park,
+          Ukrainian Village and nearby areas.
         </p>
 
         <ServiceAreaMap />
