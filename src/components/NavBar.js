@@ -7,7 +7,7 @@ function NavBar() {
       <div className="nav-inner">
         <div className="logo">
           <Link to="/">
-            <img src="public/assets/logo.png" alt="Parks Walks logo" />
+            <img src="assets/logo.png" alt="Parks Walks logo" />
           </Link>
         </div>
 
