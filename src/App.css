@@ -160,7 +160,8 @@ nav a:hover {
 }
 
 .hero-content {
-  max-width: 700px;
+  width: 100%;
+  max-width: 600px;
   margin: 0 auto;
 }
 
@@ -296,7 +297,7 @@ section + section {
 .service-image,
 .service-image--wide {
   width: 100%;
-  max-width: 160px;
+  max-width: 600px;
   height: 160px;
   object-fit: cover;
   display: block;
@@ -386,6 +387,7 @@ section + section {
   top: 12px;
   right: 12px;
   width: 40px;
+  max-width: none;
   height: 40px;
   border: none;
   border-radius: 999px;
@@ -426,7 +428,8 @@ section + section {
 }
 
 .service-modal-body {
-  max-height: 220px;
+  width: 100%;
+  max-width: 600px;;
   overflow-y: auto;
   padding-right: 6px;
 }
@@ -541,6 +544,8 @@ section + section {
   padding: 0.8rem 1.5rem;
   border: none;
   cursor: pointer;
+  width: 100%;
+  max-width: 600px; 
 }
 
 .btn-primary {
@@ -1039,5 +1044,121 @@ section + section {
 @media (max-width: 520px) {
   .services-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  font-size: 16px;
+  padding: 0.9rem;
+  border-radius: 12px;
+}
+
+button {
+  font-size: 16px;
+  min-height: 48px;
+}
+
+.page,
+.section {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.section {
+  padding: 3rem 1rem;
+}
+
+form {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+@media (max-width: 520px) {
+  nav {
+    position: sticky;
+  }
+
+  .nav-inner {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .nav-name {
+    font-size: 42px;
+    text-align: center;
+  }
+
+  nav ul {
+    justify-self: center;
+    gap: 1rem;
+    font-size: 0.95rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero {
+    padding: 80px 20px 40px;
+  }
+
+  .hero h1 {
+    font-size: 2.1rem;
+    padding: 12px;
+  }
+
+  .hero p {
+    padding: 12px;
+  }
+
+  section {
+    padding: 2.5rem 1rem;
+  }
+
+  .section-card {
+    padding: 1.25rem;
+  }
+
+  .service-modal-overlay {
+    padding: 12px;
+    align-items: center;
+  }
+
+  .service-modal {
+    width: 100%;
+    max-height: 88vh;
+    padding: 20px;
+    border-radius: 18px;
+  }
+
+  .service-modal-image {
+    max-width: 180px;
+  }
+
+  .service-modal-body li {
+    font-size: 1rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    max-width: none;
+  }
+
+  .about-layout {
+    padding: 0;
   }
 }
