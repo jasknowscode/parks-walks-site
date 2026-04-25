@@ -128,7 +128,7 @@ export default function Home() {
                     className="btn-primary btn-primary--sm"
                     to={`/contact?service=${encodeURIComponent(s.title)}`}
                   >
-                    Book This
+                    Book
                   </Link>
                 </div>
               </div>
