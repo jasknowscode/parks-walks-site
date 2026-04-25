@@ -2,10 +2,11 @@ import { useEffect, useMemo, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import Footer from "../components/Footer";
 
+
 function Contact() {
   const location = useLocation();
   const containerRef = useRef(null);
-
+  
   const selectedService = useMemo(() => {
     const params = new URLSearchParams(location.search);
     return params.get("service") || "";
@@ -74,9 +75,11 @@ function Contact() {
       containerRef.current.appendChild(placeholder);
 
       // Load Google Places if not already there //
+const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
+
       await loadScript(
         "google-places-sdk",
-        "https://maps.googleapis.com/maps/api/js?key=AIzaSyA0Z_MG1r4Yz2EooX13nnWLpC1JHk-jFQw&libraries=places"
+        `https://maps.googleapis.com/maps/api/js?key=${googleMapsApiKey}&libraries=places`
       );
 
       // Load Scout app.js fresh (so it finds the new placeholder //
