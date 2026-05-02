@@ -51,7 +51,7 @@ export default function About() {
           </p>
 
           <p>
-            At home, I have a 6-year-old cat named Kopa, who constantly reminds me how important patience, gentleness, and routine are in an animal’s life. 
+            At home, I have a 6-year-old orange American shorthair tabby cat named Kopa, who constantly reminds me how important patience, gentleness, and routine are in an animal’s life. 
             That perspective carries into every visit — whether it’s a quick walk, a drop-in, or extended care. 
             Parks Walks primarily serves Hyde Park and surrounding South Chicago neighborhoods, with a goal to provide dependable, compassionate care that gives you peace of mind and gives your pet a stable, positive experience.
           </p>
