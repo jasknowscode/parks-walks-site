@@ -26,7 +26,7 @@ const services = [
     img: `${process.env.PUBLIC_URL}/assets/service-dropin.png`,
     alt: "Drop-in visit with a pet at home",
     details: [
-      "Perfect for puppies, cats, and small critters",
+      "30 / 60 minute visit for puppies, cats, and small critters",
       "Medication and meal support",
       "Litter / cleanup and fresh water",
       "Quick potty break, playtime + enrichment",
