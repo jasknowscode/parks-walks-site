@@ -49,7 +49,7 @@ export default function Footer() {
 
         <div className="footer-social">
           <a
-            href="https://instagram.com/yourhandle"
+            href="https://instagram.com/parkswalks"
             target="_blank"
             rel="noreferrer"
             className="social-icon instagram"
@@ -60,7 +60,7 @@ export default function Footer() {
           </a>
 
           <a
-            href="https://facebook.com/yourhandle"
+            href="https://facebook.com/parkswalks"
             target="_blank"
             rel="noreferrer"
             className="social-icon facebook"
