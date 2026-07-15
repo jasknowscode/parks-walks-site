@@ -493,8 +493,7 @@ section + section {
 .about-img-container {
   display: flex;
   flex-direction: column;
-  flex: auto;
-  gap: 22px;
+  gap: 12px;
 }
 
 .about-layout {
@@ -505,15 +504,12 @@ section + section {
 }
 
 .about-photo {
-  width: auto;
-  height: 420px;
-  object-fit: cover;
   border-radius: 14px;
 }
 
 .about-copy h2 {
   margin-top: 0;
-  display: inline;
+  display: flex;
 }
 
 .about-highlights {
@@ -530,6 +526,10 @@ section + section {
   background: rgba(250, 250, 248, 0.8);
   color: var(--soft-gray);
   font-weight: 600;
+}
+
+.about-para {
+  font-size: 22px;
 }
 
 /* =========
